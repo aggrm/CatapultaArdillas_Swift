@@ -40,23 +40,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate
        
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    override func touchedBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        catapulta.removeAllActions()
-        catapulta.run(giroIzq)
+        let tochedNode = self.atPoint(touches.first!.location(in: self))
+        if let name = tochedNode.name
+        {
+            if name == "reiniciar"
+            {
+                reiniciarPartida()
+            }
+        }
+        else
+        {
+            catapulta.removeAllActions()
+            catapulta.run(giroIzq)
         
-        //creo un disparo y lo añado en el punto de salida de las bellotas
-        let disparo = SKSpriteNode(imageNamed: "acorn2.png")
-        disparo.zPosition = 4
-        disparo.physicsBody = SKPhysicsBody(circleOfRadius: 15)
-        disparo.position = salidaBellotas.position
-        disparo.physicsBody?.collisionBitMask = 3                                           //0011
-        disparo.physicsBody?.contactTestBitMask = 3                                         //0011
-        disparo.physicsBody?.categoryBitMask = 3                                            //0011
+            //creo un disparo y lo añado en el punto de salida de las bellotas
+            let disparo = SKSpriteNode(imageNamed: "acorn2.png")
+            disparo.zPosition = 4
+            disparo.physicsBody = SKPhysicsBody(circleOfRadius: 15)
+            disparo.position = salidaBellotas.position
+            disparo.physicsBody?.collisionBitMask = 3                                           //0011
+            disparo.physicsBody?.contactTestBitMask = 3                                         //0011
+            disparo.physicsBody?.categoryBitMask = 3                                            //0011
         
-        disparoCamara =  disparo
-        addChild(disparo)
-        self.camera?.position.x = UIScreen.main.bounds.width / 2
+            disparoCamara =  disparo
+            addChild(disparo)
+            self.camera?.position.x = UIScreen.main.bounds.width / 2
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -129,5 +140,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     func actualizaMarcador()
     {
         etiquetaMarcador.text = String(puntuacion)
+    }
+    
+    func reiniciarPartida()
+    {
+        if let view = self.view
+        {
+            if let scene = SKScene(fileNamed:"GameScene")
+            {
+                scene.scaleMode = .aspectFill
+                view.presentScene(scene)
+            }
+        }
     }
 }

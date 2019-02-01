@@ -33,6 +33,7 @@
 		3D6CA37721F0E0D70006C445 /* catapult_base_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CA36721F0E0D70006C445 /* catapult_base_2.png */; };
 		3D6CA37821F0E0D70006C445 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CA36821F0E0D70006C445 /* fire.png */; };
 		3D6F3CE722048BDD0095ADC3 /* ExplosionPerros.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F3CE622048BDD0095ADC3 /* ExplosionPerros.sks */; };
+		3D6F3CED220499D20095ADC3 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F3CEC220499D20095ADC3 /* reset.png */; };
 		3D7FCE3C21FB532200A9F295 /* catapult_cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FCE3B21FB532200A9F295 /* catapult_cup.png */; };
 		3D7FCE3E21FB619B00A9F295 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FCE3D21FB619B00A9F295 /* Explosion.sks */; };
 		3DCC5BFB21F0E41200EA981C /* catapult_armLargo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DCC5BFA21F0E41100EA981C /* catapult_armLargo.png */; };
@@ -67,6 +68,7 @@
 		3D6CA36721F0E0D70006C445 /* catapult_base_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catapult_base_2.png; sourceTree = "<group>"; };
 		3D6CA36821F0E0D70006C445 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		3D6F3CE622048BDD0095ADC3 /* ExplosionPerros.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionPerros.sks; sourceTree = "<group>"; };
+		3D6F3CEC220499D20095ADC3 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 		3D7FCE3B21FB532200A9F295 /* catapult_cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = catapult_cup.png; path = ../../../../Downloads/catapult_cup.png; sourceTree = "<group>"; };
 		3D7FCE3D21FB619B00A9F295 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		3DCC5BFA21F0E41100EA981C /* catapult_armLargo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catapult_armLargo.png; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		3D6CA37A21F0E0DF0006C445 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				3D6F3CEC220499D20095ADC3 /* reset.png */,
 				3D6CA36121F0E0D60006C445 /* acorn.png */,
 				3D238E0B21F2205D00FA691B /* acorn2.png */,
 				3D6CA35A21F0E0D60006C445 /* bg.png */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6CA36B21F0E0D70006C445 /* fg.png in Resources */,
+				3D6F3CED220499D20095ADC3 /* reset.png in Resources */,
 				3D6CA37821F0E0D70006C445 /* fire.png in Resources */,
 				3D6CA34E21F0E0510006C445 /* Main.storyboard in Resources */,
 				3D6CA37521F0E0D70006C445 /* brick_3.png in Resources */,
