@@ -19,6 +19,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     var salidaBellotas: SKNode!
     var disparoCamara = SKSpriteNode()
     
+    var etiquetaMarcador : SKLabelNode!
+    var puntuacion = 0
+    
     override func didMove(to view: SKView)
     {
         catapulta = childNode(withName: "catapulta") as! SKSpriteNode
@@ -33,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         creaCazo()
         
         self.physicsWorld.contactDelegate = self
+        etiquetaMarcador = camera?.childNode(withName: "marcador") as! SKLabelNode
        
     }
     
@@ -105,6 +109,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                 addChild(emisor!)
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
+                puntuacion = puntuacion + 10
+                actualizaMarcador()
                 
             }
             if(contact.bodyA.categoryBitMask == 6) || (contact.bodyB.categoryBitMask == 6)
@@ -114,7 +120,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                 addChild(emisor!)
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
+                puntuacion = puntuacion + 20
+                actualizaMarcador()
             }
         }
+    }
+    
+    func actualizaMarcador()
+    {
+        etiquetaMarcador.text = String(puntuacion)
     }
 }
